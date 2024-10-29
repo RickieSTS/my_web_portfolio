@@ -247,7 +247,7 @@ header nav {
   width: 95%;
   margin: auto;
   height: 100vh;
-  max-height: 100vh;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -267,7 +267,7 @@ header nav {
 }
 
 .about > section {
-  height: 50vh;
+  /* height: 50vh; */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -401,6 +401,7 @@ header nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap:55px
 }
 
 .project-spacing img {
@@ -408,7 +409,7 @@ header nav {
   max-width: 800px;
   height: auto;
   border-radius: 11px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .project-spacing > div {
@@ -420,10 +421,10 @@ header nav {
   /* margin-left: 55px; */
 }
 
-.project-2 > div {
+/* .project-2 > div {
   margin-left: 0px;
-  /* margin-right: 55px; */
-}
+  /* margin-right: 55px; 
+} */
 
 .badge-section {
   display: flex;
@@ -558,7 +559,7 @@ footer p {
   .project-spacing > div {
     max-width: 47%;
 
-    margin-left: 55px;
+    /* margin-left: 55px; */
   }
 
   .project-2 > div {
@@ -590,16 +591,22 @@ footer p {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1650px) {
+  .margin-container{
+    max-width: 1925px;
+  }
+
   .about {
 
     width: 65%;
-  
+    max-width: 1237px;
   }
   .projects header {
     width: 65%;
+    max-width: 1237px;
   }
   .projects article {
     width: 65%;
+    max-width: 1237px;
   }
 
   .project-spacing img {
@@ -612,6 +619,7 @@ footer p {
   }
   footer > div {
     width: 65%;
+    max-width: 1237px;
   }
 
 }
