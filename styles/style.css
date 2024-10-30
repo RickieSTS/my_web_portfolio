@@ -1,4 +1,4 @@
-:root {
+.light {
   --primary: #d9ed92;
   --primary-accent: #b5e48c;
   --secondary: #184e77;
@@ -14,6 +14,34 @@
   --font-h5: 0.83em;
   --font-h6: 0.67em;
 }
+
+  .dark {
+  --primary: #010407;
+  --primary-accent: #040701;
+  --secondary: #184e77;
+  --secondary-clear: #145b7b;
+  --secondary-blue: #05121b;
+  --background-secondary: #020401;
+  --white: #bebebe;
+  
+
+
+  --font-h1: 2em;
+  --font-h2: 1.5em;
+  --font-h3: 1.17em;
+  --font-h4: 1em;
+  --font-h5: 0.83em;
+  --font-h6: 0.67em;
+}
+
+
+
+#lightThemeButton:checked {
+}
+
+.light #darkThemeButton:checked {
+}
+
 @font-face {
   font-family: lexend;
   src: url(./Fonts/Lexend-VariableFont_wght.ttf);
@@ -98,6 +126,18 @@ header nav {
 
 .nav-icons li {
   margin-left: 1rem;
+}
+
+nav input[type="radio"] {
+  display: none;
+}
+
+nav input[type="radio"] + label {
+  cursor: pointer;
+}
+
+nav input[type="radio"]:checked + label {
+  color: blueviolet;
 }
 
 /*----------------SECTION INTRO TEXT----------------*/
@@ -401,7 +441,7 @@ header nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap:55px
+  gap: 55px;
 }
 
 .project-spacing img {
@@ -585,18 +625,15 @@ footer p {
   footer > div {
     width: 75%;
   }
-
-
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1650px) {
-  .margin-container{
+  .margin-container {
     max-width: 1925px;
   }
 
   .about {
-
     width: 65%;
     max-width: 1237px;
   }
@@ -621,5 +658,4 @@ footer p {
     width: 65%;
     max-width: 1237px;
   }
-
 }
