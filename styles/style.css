@@ -15,7 +15,7 @@
   --font-h6: 0.67em;
 }
 
-  .dark {
+.dark {
   --primary: #010407;
   --primary-accent: #040701;
   --secondary: #184e77;
@@ -23,8 +23,6 @@
   --secondary-blue: #05121b;
   --background-secondary: #020401;
   --white: #bebebe;
-  
-
 
   --font-h1: 2em;
   --font-h2: 1.5em;
@@ -33,8 +31,6 @@
   --font-h5: 0.83em;
   --font-h6: 0.67em;
 }
-
-
 
 #lightThemeButton:checked {
 }
@@ -94,7 +90,67 @@ header nav {
   min-height: 50px;
   /* width: 65%;  */
   /* width: 100%;  */
-  margin: auto;
+  margin: auto 20px;
+}
+nav div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.burger-menu::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  /* transition-duration: 800ms; */
+  
+
+}
+
+.burger-menu{
+  margin: 0px 0px 0px auto;
+  width: 25vw;
+  height: 100vh;
+  overflow: hidden;
+  border: none;
+  padding: 40px;
+  text-align: end;
+  /* transition: transform 0.8s ease-in-out; */
+  /* transition-duration: 800ms; */
+}
+
+.burger-menu ul{
+  padding-left: 0px;
+}
+
+.burger-menu li{
+  font-size: var(--font-h2);
+  text-align: center;
+}
+
+.burger-menu li:nth-child(2){
+  padding: 20px 0px;
+  margin-left: 0px;
+}
+
+.burger-menu li a{
+ text-decoration: none;
+  color: inherit;
+ 
+
+}
+
+.burger-menu[open]{
+  animation-name: burgerMenuAnimation;
+  animation-duration: .5s;
+  
+}
+
+
+
+@keyframes burgerMenuAnimation {
+  0%{
+      transform: translateX(100%)
+  }
 }
 
 .nav-pages {
@@ -109,13 +165,15 @@ header nav {
 
 .nav-pages li:hover {
   font-weight: 600;
+  scale: 1.2;
+  transition-duration: 400ms;
 }
 
 .nav-pages li a {
   text-decoration: none;
   color: inherit;
-  transition: all 0.1s ease;
-  scroll-behavior: smooth;
+  /* transition: all 0.1s ease; */
+  /* scroll-behavior: smooth; */
 }
 
 .nav-icons {
@@ -124,7 +182,8 @@ header nav {
   padding: 0px;
 }
 
-.nav-icons li {
+.nav-icons li:nth-child(1),
+li:nth-child(2) {
   margin-left: 1rem;
 }
 
@@ -134,10 +193,32 @@ nav input[type="radio"] {
 
 nav input[type="radio"] + label {
   cursor: pointer;
+  margin-left: 1rem;
+}
+
+nav input[type="radio"] + label:hover {
+  scale: 1.2;
+  transition-duration: 200ms;
+}
+
+.nav-icons a:visited {
+  color: inherit;
+}
+
+.nav-icons a svg:hover {
+  scale: 1.2;
+  transition-duration: 200ms;
 }
 
 nav input[type="radio"]:checked + label {
   color: blueviolet;
+}
+
+.hide-button-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 /*----------------SECTION INTRO TEXT----------------*/
