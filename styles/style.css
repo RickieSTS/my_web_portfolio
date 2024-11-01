@@ -16,12 +16,12 @@
 }
 
 .dark {
-  --primary: #010407;
-  --primary-accent: #040701;
-  --secondary: #184e77;
-  --secondary-clear: #145b7b;
-  --secondary-blue: #05121b;
-  --background-secondary: #020401;
+  --primary: #092635;
+  --primary-accent: #1b4242;
+  --secondary: #9ec8b9;
+  --secondary-clear: #5c8374;
+  --secondary-blue: #092635;
+  --background-secondary: #1b4242;
   --white: #bebebe;
 
   --font-h1: 2em;
@@ -30,12 +30,6 @@
   --font-h4: 1em;
   --font-h5: 0.83em;
   --font-h6: 0.67em;
-}
-
-#lightThemeButton:checked {
-}
-
-.light #darkThemeButton:checked {
 }
 
 @font-face {
@@ -86,70 +80,130 @@ body ul {
 
 header nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   min-height: 50px;
   /* width: 65%;  */
   /* width: 100%;  */
   margin: auto 20px;
 }
 nav div {
-  display: flex;
+  display: none;
   width: 100%;
   justify-content: space-between;
 }
-
-.burger-menu::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-  /* transition-duration: 800ms; */
-  
-
+.nav-icons.burger-list path {
+  color: var(--secondary);
 }
 
-.burger-menu{
-  margin: 0px 0px 0px auto;
-  width: 25vw;
+.burger-menu::backdrop {
+  background-color: rgba(37, 37, 37, 0.5);
+  backdrop-filter: blur(2px);
+  /* transition-duration: 800ms; */
+}
+
+.burger-menu {
+  margin: 0px;
+  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
   border: none;
-  padding: 40px;
+  padding: 0px;
   text-align: end;
+  background-color: var(--secondary-blue);
+  color: var(--white);
   /* transition: transform 0.8s ease-in-out; */
   /* transition-duration: 800ms; */
 }
 
-.burger-menu ul{
+.burger-menu button {
+  display: flex;
+  justify-content: flex-end;
+  /* color: var(--white); */
+}
+
+.burger-menu button path{
+  color: var(--white);
+}
+
+.burger-menu path {
+  color: var(--secondary);
+}
+
+.burger-menu form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.burger-menu form div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.burger-menu ul {
   padding-left: 0px;
 }
 
-.burger-menu li{
+.burger-menu li {
   font-size: var(--font-h2);
   text-align: center;
 }
 
-.burger-menu li:nth-child(2){
-  padding: 20px 0px;
+.burger-menu li{
+  padding-bottom: 20px;
   margin-left: 0px;
 }
 
-.burger-menu li a{
- text-decoration: none;
+.burger-menu li:hover{
+  font-weight: 600;
+  scale: 1.2;
+  transition-duration: 400ms;
+}
+
+.burger-menu li a {
+  text-decoration: none;
   color: inherit;
- 
-
 }
 
-.burger-menu[open]{
+.burger-icons ul{
+  display: flex;
+  flex-direction: row;
+}
+
+.burger-icons svg{
+  width: 37px;
+  margin: 0px 20px;
+}
+
+.burger-icons svg:hover{
+  scale: 1.2;
+  transition-duration: 200ms;
+}
+
+.burger-icons path{
+  color: var(--white);
+}
+
+/* .burger-dash{
+  height: 2px;
+  width: 50%;
+  background-color: var(--white);
+  border-radius: 50px;
+} */
+
+
+
+.burger-menu[open] {
   animation-name: burgerMenuAnimation;
-  animation-duration: .5s;
-  
+  animation-duration: 0.5s;
 }
-
-
 
 @keyframes burgerMenuAnimation {
-  0%{
-      transform: translateX(100%)
+  0% {
+    transform: translateX(100%);
   }
 }
 
@@ -182,8 +236,8 @@ nav div {
   padding: 0px;
 }
 
-.nav-icons li:nth-child(1),
-li:nth-child(2) {
+header .nav-icons li:nth-child(1),
+header li:nth-child(2) {
   margin-left: 1rem;
 }
 
@@ -193,7 +247,7 @@ nav input[type="radio"] {
 
 nav input[type="radio"] + label {
   cursor: pointer;
-  margin-left: 1rem;
+  margin-left: 25px;
 }
 
 nav input[type="radio"] + label:hover {
@@ -208,10 +262,6 @@ nav input[type="radio"] + label:hover {
 .nav-icons a svg:hover {
   scale: 1.2;
   transition-duration: 200ms;
-}
-
-nav input[type="radio"]:checked + label {
-  color: blueviolet;
 }
 
 .hide-button-style {
@@ -231,7 +281,7 @@ nav input[type="radio"]:checked + label {
   /* width: 65%; */
   height: 100vh;
   max-height: 70vh;
-  margin: auto;
+  margin: auto 20px;
 
   font-size: 2.8rem;
 }
@@ -377,6 +427,7 @@ nav input[type="radio"]:checked + label {
 
 .about header {
   display: flex;
+  margin: 70px 0px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -522,12 +573,12 @@ nav input[type="radio"]:checked + label {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 55px;
+  gap: 15px;
 }
 
 .project-spacing img {
   width: 100%;
-  max-width: 800px;
+  /* max-width: 800px; */
   height: auto;
   border-radius: 11px;
   /* margin-bottom: 30px; */
@@ -571,21 +622,28 @@ nav input[type="radio"]:checked + label {
   justify-content: space-between;
 }
 
-.projects input[type="button"] {
+.projects input[type="button"],
+.projects button {
   color: var(--primary-accent);
   background-color: var(--secondary);
 
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2rem;
-
   width: 9em;
   height: 2.5em;
-
   padding: 13px 25px;
-
   border-radius: 15px;
+  border: 0px;
+}
 
+.projects button {
+  color: var(--primary-accent);
+  background-color: var(--secondary);
+  width: 3em;
+  height: 2.5em;
+  padding: 13px 13px;
+  border-radius: 15px;
   border: 0px;
 }
 
@@ -644,21 +702,37 @@ footer p {
   /* background-color: #ffbb00; */
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  header nav {
-    min-height: 85px;
+@media only screen and (max-width: 499px) {
+  .project-spacing input[value="Case Study"] {
+    display: none;
   }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 499px) {
+  /* header nav {
+    min-height: 85px;
+  } */
+   .projects button{
+    display: none;
+   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  header nav {
+  /* header nav {
     min-height: 85px;
+  } */
+
+  nav div {
+    display: flex;
+  }
+  .nav-icons.burger-list {
+    display: none;
   }
 
-  .nav-pages {
+  /* .nav-pages {
     font-size: 1.625rem;
-  }
+  } */
 
   .intro-text {
     font-size: 3.75rem;
@@ -674,18 +748,23 @@ footer p {
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .project-spacing {
+    gap: 55px;
+    flex-wrap: nowrap;
+  }
   .project-spacing img {
     max-width: 435px;
   }
+
   .project-spacing > div {
     max-width: 47%;
 
     /* margin-left: 55px; */
   }
 
-  .project-2 > div {
+  /* .project-2 > div {
     margin-right: 55px;
-  }
+  } */
 }
 
 @media only screen and (min-width: 1200px) {
